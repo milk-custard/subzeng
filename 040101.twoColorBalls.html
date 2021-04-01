@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+	</head>
+	<body>
+		<div class="layui-container">
+			<div class="layui-row">
+				<div class="layui-col-md5">
+					<div id="app" style="padding: 50px;">
+						红球：{{red1}},{{red2}},{{red3}},{{red4}},{{red5}},{{red6}}
+						篮球：{{blue1}}
+						<button class="layui-btn"  v-on:click="red1=Math.ceil(Math.random()*33),
+						red2=Math.ceil(Math.random()*33),
+						red3=Math.ceil(Math.random()*33),
+						red4=Math.ceil(Math.random()*33),
+						red5=Math.ceil(Math.random()*33),
+						red6=Math.ceil(Math.random()*33),
+						blue1=Math.ceil(Math.random()*16)
+						">随机数按钮</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data(){
+					return {
+						red1:'',
+						red2:'',
+						red3:'',
+						red4:'',
+						red5:'',
+						red6:'',
+						blue1:''
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

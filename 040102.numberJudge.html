@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<ul id="oddEven">
+			<li v-for="od in odd(digits)">奇数：{{od}}</li>
+			<li v-for="ev in even(digits)">偶数：{{ev}}</li>
+		</ul>
+		<script type="text/javascript">
+			var v = new Vue({
+				el:'#oddEven',
+				data:{
+					digits:[1,2,3,4,5,6,7,8,9,10]
+				},
+				methods:{
+					odd:function(digits){
+						return digits.filter(function(digit){
+							return digit%2==1;
+						});
+					},
+					even:function(digits){
+						return digits.filter(function(digit){
+							return digit%2==0;
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
