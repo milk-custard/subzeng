@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>号码区</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+				<input type="text" v-model="useNumber" name="" id="" value="" />
+				{{useNumber}}
+				<div v-for="country in countries">
+					<div v-if="useNumber==country.code">
+						国家：{{country.name}}	<br />
+						首都：{{country.captal}}	<br />
+						号码区：{{country.code}}
+					</div>
+				</div>
+				
+		</div>
+		<script type="text/javascript">
+			var v = new Vue({
+				el:'#app',
+				data:{
+					useNumber:'',
+					countries:[
+						{name:"中国",captal:"北京",code:"86"},
+						{name:"英国",captal:"伦敦",code:"44"},
+						{name:"德国",captal:"柏林",code:"49"},
+						{name:"韩国",captal:"首尔",code:"82"},
+						{name:"法国",captal:"巴黎",code:"33"}
+					]
+					
+				}
+			})
+		</script>
+	</body>
+	
+</html>
